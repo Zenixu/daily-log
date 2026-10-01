@@ -9,22 +9,34 @@ Repo ini dipakai untuk mencatat progress belajar **Rust**, **Advanced React**, d
 ```
 daily-log/
 ├── README.md
-├── 2026/
-│   ├── 10-01.md
-│   └── 10-02.md
-└── templates/
-    └── entry.md
+├── templates/
+│   └── entry.md          # template catatan harian
+├── scripts/
+│   └── new-entry.sh      # bikin entry hari ini otomatis
+├── YYYY/
+│   └── MM-DD.md          # catatan harian
+└── project/
+    └── progress/         # progress per-project
+        ├── animebot.md
+        ├── ibnurch.md
+        └── rust-portfolio.md
 ```
 
 ## ✍️ Cara Pakai
 
-1. Copy template: `cp templates/entry.md 2026/10-01.md`
-2. Isi 3–5 baris — jangan kepanjangan, yang penting konsisten.
-3. Commit & push.
+### Catatan harian
+```bash
+./scripts/new-entry.sh          # bikin file tanggal hari ini
+${EDITOR:-nano} 2026/10-02.md   # isi 3–5 baris
+```
 
+### Progress project
+Update file di `project/progress/` setiap ada kemajuan nyata.
+
+### Commit & push
 ```bash
 git add .
-git commit -m "log: 2026-10-01"
+git commit -m "log: 2026-10-02"
 git push
 ```
 
